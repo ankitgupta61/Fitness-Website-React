@@ -1,0 +1,17 @@
+npm install --legacy-peer-deps (what does --legacy vagaira means??)
+transition and transform 
+::-webkit-scrollbar{
+
+}
+::-webkit-scrollbar-track{
+
+}
+::-webkit-scrollbar-thumb{
+
+}
+pseudo Element
+
+sx = {{gap : {sm : "32px"}}} // here sm means small device screen i.e of max-width 600px
+sx = {{gap : {xl : "32px"}}} // here xl means xtralarge device screen i.e of min-width : 1536px
+
+lg : (large) => min-width : 1200px and max-width : 1536 px (Baiscally Laptop size)
