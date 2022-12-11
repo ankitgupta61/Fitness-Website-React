@@ -36,8 +36,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       setExercises(exercisesData);
     };
     fetchExercisesData();
-    // const data = fetchData("https://exercisedb.p.rapidapi.com/exercises", exerciseOptions);
-    // console.log(data);
   }, [bodyPart]);
 
   return (
