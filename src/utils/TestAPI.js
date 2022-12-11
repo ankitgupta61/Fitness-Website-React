@@ -15,7 +15,7 @@ const TestAPI = () => {
     console.log(cardioData);
   };
   testApi();
-  return <div>TestAPI</div>;
+  return <div></div>;
 };
 
 export default TestAPI;
