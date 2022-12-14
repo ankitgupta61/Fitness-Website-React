@@ -1,7 +1,76 @@
 import React from "react";
+import { Typography, Stack, Button } from "@mui/material";
 
-const Detail = () => {
-  return <div>Detail</div>;
+import BodyPartImage from "../assets/icons/body-part.png";
+import TargetImage from "../assets/icons/target.png";
+import EquimentInage from "../assets/icons/equipment.png";
+
+const Detail = ({ exerciseDetail }) => {
+  const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
+  const extraDetail = [
+    {
+      icon: BodyPartImage,
+      name: bodyPart,
+    },
+    {
+      icon: TargetImage,
+      name: target,
+    },
+    {
+      icon: EquimentInage,
+      name: equipment,
+    },
+  ];
+  return (
+    <Stack
+      gap={"60px"}
+      sx={{ flexDirection: { lg: "row" }, p: "20px", alignItems: "center" }}
+    >
+      <img src={gifUrl} alt={name} loading={"lazy"} className="detail-image" />
+      <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
+        <Typography variant="h3" textTransform="capitalize">
+          {name}
+        </Typography>
+        <Typography variant="h6">
+          Exercises keep you strong.{" "}
+          <Typography
+            display={"inline"}
+            variant="h6"
+            textTransform={"capitalize"}
+          >
+            {name}
+          </Typography>{" "}
+          is one of the best exercises to target your {target}. It will help you
+          improve your mood and gain energy.
+        </Typography>
+        {extraDetail.map((item) => (
+          <Stack
+            key={item.name}
+            gap="24px"
+            sx={{ flexDirection: "row", alignItems: "center" }}
+          >
+            <Button
+              sx={{
+                background: "#fff2db",
+                width: "100px",
+                height: "100px",
+                borderRadius: "50%",
+              }}
+            >
+              <img
+                src={item.icon}
+                alt={"icon"}
+                style={{ width: "50px", height: "50px" }}
+              />
+            </Button>
+            <Typography variant="h5" textTransform={"capitalize"}>
+              {item.name}
+            </Typography>
+          </Stack>
+        ))}
+      </Stack>
+    </Stack>
+  );
 };
 
 export default Detail;
